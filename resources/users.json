@@ -5,6 +5,18 @@
       "name": "admin",
       "password": "$2y$10$nuh1LEwFt7Q2/wz9/CmTJO91stTBS4cRjiJYBY3sVCARnllI.wzBC",
       "email": "admin@assemblerschool.com"
+    },
+    {
+      "userId": 2,
+      "name": "hugo",
+      "password": "$2y$10$nuh1LEwFt7Q2/wz9/CmTJO91stTBS4cRjiJYBY3sVCARnllI.wzBC",
+      "email": "hugo@assemblerschool.com"
+    },
+    {
+      "userId": 3,
+      "name": "marc",
+      "password": "$2y$10$nuh1LEwFt7Q2/wz9/CmTJO91stTBS4cRjiJYBY3sVCARnllI.wzBC",
+      "email": "marc@assemblerschool.com"
     }
   ]
 }

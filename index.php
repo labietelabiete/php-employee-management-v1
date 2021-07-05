@@ -32,18 +32,18 @@ if (isset($_GET["logout"])) {
             <i class="fas fa-users"></i>
           </div>
           <div class="col col-12 pt-3">
-            <h2>WELCOME PHP LOGIN</h2>
+            <h2>EMPLOYEE MANAGEMENT</h2>
           </div>
 
           <div class="col col-12 pt-3">
             <label class="pb-1" for="emailInput"><i class="fas fa-user"></i> User email</label>
             <br>
-            <input type="email" name="email" id="emailInput" placeholder="Email Adress" class="form-control login-input w-95 d-inline">
+            <input type="email" name="email" id="emailInput" placeholder="Email Adress" class="form-control login-input d-inline">
           </div>
           <div class="col col-12 pt-3">
             <label class="pb-1" for="passwordEmail"><i class="fas fa-lock"></i> User password</label>
             <br>
-            <input type="password" name="password" id="passwordInput" placeholder="Password" class="form-control login-input w-95 d-inline">
+            <input type="password" name="password" id="passwordInput" placeholder="Password" class="form-control login-input d-inline">
           </div>
           <?php
           if (isset($_SESSION["alertMessage"])) {

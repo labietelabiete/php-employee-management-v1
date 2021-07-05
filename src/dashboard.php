@@ -12,7 +12,7 @@ echo "Login successfully";
 </head>
 
 <body>
-  <a href="./close_session.php" class="btn btn-lg btn-primary btn-logout">
+  <a href="./library/loginController.php?logout=true" class="btn btn-lg btn-primary btn-logout">
     Logout
     <!-- <button class="w-95 btn btn-lg btn-primary btn-logout"">Logout</button> -->
   </a>

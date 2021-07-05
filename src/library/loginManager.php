@@ -2,28 +2,50 @@
 
 function authLogin()
 {
-  session_start();
+  // session_start();
 
   $email = $_POST["email"];
   $password = $_POST["password"];
 
-  // Database fake info
-  $emaildB = "imassembler@assemblerschool.com";
-  $passDb = "Assemb13r";
-  $passDbHash = password_hash($passDb, PASSWORD_DEFAULT);
+  // Database fake using users.json
+  $usersJson = file_get_contents("./../../resources/users.json");
+  $jsonIterator = new RecursiveIteratorIterator(
+    new RecursiveArrayIterator(json_decode($usersJson, TRUE)),
+    RecursiveIteratorIterator::SELF_FIRST
+  );
 
-  if($email == $emaildB && password_verify($password, $passDbHash))
-  {
-    $_SESSION["email"] = $email;
-    header("Location:./../dashboard.php");
-  } else {
-    $_SESSION["alertMessage"] = "Wrong mail or password";
+  $usersPassword = [];
+  $usersEmail = [];
+
+  foreach ($jsonIterator as $key => $val) {
+    if ($key == "email") {
+      array_push($usersEmail, $val);
+    }
+    if ($key == "password") {
+      array_push($usersPassword, $val);
+    }
+  }
+
+  $sessionFlag = false;
+
+  // Matching email and password
+  for ($i = 0; $i < count($usersEmail); $i++) {
+    if ($email == $usersEmail[$i] && password_verify($password, $usersPassword[$i])) {
+      $sessionFlag = true;
+      $_SESSION["email"] = $email;
+      header("Location:./../dashboard.php");
+    }
+  }
+
+  if (!$sessionFlag) {
+    $_SESSION["alertMessage"] = "Wrong email or password";
+    header("Location:./../../index.php");
   }
 }
 
-function closingSession()
+function logoutSession()
 {
-  session_start();
+  // session_start();
 
   unset($_SESSION);
 
