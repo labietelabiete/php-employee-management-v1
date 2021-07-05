@@ -1,4 +1,8 @@
 <!-- TODO Main view or Employees Grid View here is where you get when logged here there's the grid of employees -->
+<?php
+echo "Login successfully";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +16,14 @@
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../node_modules/jsgrid/dist/jsgrid.min.js"></script>
     
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <h3>Current Employees Table</h3>
+    <a href="./library/loginController.php?logout=true" class="btn btn-lg btn-primary btn-logout">
+        Logout
+        <!-- <button class="w-95 btn btn-lg btn-primary btn-logout"">Logout</button> -->
+    </a>
     <div id="gridTable"></div>
     <script>
     async function loadEmployees(){
@@ -115,3 +123,5 @@
     </script>
 </body>
 </html>
+
+
