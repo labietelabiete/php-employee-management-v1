@@ -1,5 +1,96 @@
 # PHP BASIC APPLICATION TO MANAGE AN EMPLOYEES LIST
 
+
+# Project notes
+
+### Pages
+
+- index.php: Pagina del login
+- dashboard.php: Pagina de informacion de employees
+- employee.php: Employee information para ver y editar
+
+### Dependencies
+
+- Bootstrap
+- jQuery
+- JSGrid
+
+### Password encrypting
+
+password_hash()
+password_verify()
+
+### dashboard.php
+
+Funcionalidades:
+- Boton de logout
+- Eliminar usuario (usando un modal de por medio preguntando si estás seguro)
+- Añadir nuevo usuario (a través de un formulario en un modal)
+- Editar un usuario (clickando encima del usuario y te redirecciona a employee.php)
+
+### employee.php
+
+Funcionalidades:
+- Capacidad de editar usuario (formulario con submit)
+- Pop up para confirmar edicion con timer (ver bootstrap)
+- Cancel editing (te lleva al dashboard.php directamente)
+
+### JSGrid 
+Para mostrar, añadir y eliminar empleados
+
+
+### File structure
+
+- Controllers files: Son los responsables de llamar y ejecutar en el orden necesario las funciones de su correspondiente Manager
+- Managers files: Se definen las funciones que usaran su respectivo controller
+- avatarsAPI.php : funciones para hacer request a la API
+- sessionHelper.php : Establece el time out de 10 min de la sesión
+
+# Projects requirements
+
+- PHP with Json files interaction. Crear y editar se hacen usando el método PHP POST
+- En dashboard.php, añadir y eliminar empleados se usa sin refrescar página (USANDO AJAX)
+- Usar password_verify y password_hash
+- Mensaje de error si falla el login
+- Cuando editas, creas un employee, en caso de fallo, mostrar una alerta con el fallo
+- PHP session variables para el login
+- PHP server variables para saber que request viene
+- Timeout de sesión de 10 min. Te envía de nuevo a index.php
+- JSGrid library
+
+# Extra requirements
+
+- API avatar generator usando Web Services
+
+# Entrega
+
+- README.md 
+- Repository code
+
+# Resources
+
+https://www.codegrepper.com/code-examples/php/how+to+extract+data+from+json+in+php
+
+https://www.php.net/manual/es/reserved.variables.server.php
+
+http://js-grid.com/
+
+http://js-grid.com/demos/
+
+http://js-grid.com/docs/#callbacks
+
+https://docs.google.com/document/d/1jHFGIAkbqRpvA-YbTEL66brf--avewp_B131IC_9wuc/edit#heading=h.twqdua3lcp38
+
+https://www.php.net/manual/es/function.password-hash.php
+
+https://www.php.net/manual/es/function.password-verify.php
+
+https://www.php.net/manual/es/function.http-response-code.php
+
+https://getbootstrap.com/
+
+
+
 ## Application main points
 
 1. Login and logout with a json file as user storage
