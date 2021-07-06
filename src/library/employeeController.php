@@ -11,7 +11,12 @@
     // according to the given ajax request params
     switch($_SERVER["REQUEST_METHOD"]){
         case "GET":
+            // $result = getAllEmployees($employeesJSON);
             $result = getAllEmployees($employeesArray);
             break;
     }
+
+    // Formatting $result to turn it into a JSON
+    header("Content-Type: application/json");
+    echo json_encode($result);
 ?>

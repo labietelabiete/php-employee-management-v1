@@ -46,9 +46,27 @@ function getNextIdentifier(array $employeesCollection): int
 // TODO implement it
 }
 
-function getAllEmployees($filter): array
+function getAllEmployees($filter)
 {   
-    print_r ($filter);
-    return $filter;
+    // print_r ($filter);
+    foreach($filter as $object){
+        $output [] = array(
+            'id' => $object->id,
+            'name' => $object->name,
+            'lastName' => $object->lastName,
+            'email' => $object->email,
+            'gender' => $object->gender,
+            'age' => $object->age,
+            'streetAddress' => $object->streetAddress,
+            'city' => $object->city,
+            'state' => $object->state,
+            'postalCode' => $object->postalCode,
+            'phoneNumber' => $object->phoneNumber,
+        );
+        // print_r ($output);
+    }
+    return $output;
+    // echo json_encode($output);
+    // echo $filter;
 
 }
