@@ -19,108 +19,19 @@ echo "Login successfully";
     <title>Dashboard</title>
 </head>
 <body>
-    <h3>Current Employees Table</h3>
-    <a href="./library/loginController.php?logout=true" class="btn btn-lg btn-primary btn-logout">
-        Logout
-        <!-- <button class="w-95 btn btn-lg btn-primary btn-logout"">Logout</button> -->
-    </a>
-    <div id="gridTable"></div>
-    <script>
-    async function loadEmployees(){
-        
-        let response = await $.getJSON("../resources/employees.json");
-
-        $("#gridTable").jsGrid({
-            width: "100%",
-            height: "400px",
-
-            filtering: true,
-            inserting: true,
-            editing: true,
-            sortings: true,
-            paging: true,
-            autoload: true,
-            pageSize: 10,
-            pageButtonCount: 5,
-            deleteConfirm: "Do you really want to delete this employee entry?",
-
-            data: response,
-
-            fields:[
-                {
-                    name: "id",
-                    type: "hidden",
-                    css: 'hide'
-                },
-                {
-                    name: "name",
-                    type: "text",
-                    width: 30,
-                    validate: "required"
-                },
-                {
-                    name: "lastName",
-                    type: "hidden",
-                    css: 'hide'
-                },
-                {
-                    name: "email",
-                    type: "text",
-                    width: 40,
-                    validate: "required"
-                },
-                {
-                    name: "gender",
-                    type: "hidden",
-                    css: 'hide'
-                },
-                {
-                    name: "age",
-                    type: "number",
-                    width: 10,
-                    validate: "required" 
-                },
-                {
-                    name: "street Nº",
-                    type: "text",
-                    width: 10,
-                    validate: "required" 
-                },
-                {
-                    name: "city",
-                    type: "text",
-                    width: 50,
-                    validate: "required"
-                },
-                {
-                    name: "state",
-                    type: "text",
-                    width: 10,
-                    validate: "required" 
-                },
-                {
-                    name: "postalCode",
-                    type: "number",
-                    width: 30,
-                    validate: "required" 
-                },
-                {
-                    name: "phoneNumber",
-                    type: "number",
-                    width: 30,
-                    validate: "required" 
-                },
-                {   
-                    name: "add",
-                    type: "control"
-                    
-                },
-            ],
-
-        });
-    }
-    loadEmployees();
-    </script>
+    <?php 
+        include "../assets/html/header.html";
+    ?>
+        <h3>Current Employees Table</h3>
+        <a href="./library/loginController.php?logout=true" class="btn btn-lg btn-primary btn-logout">
+            Logout
+            <!-- <button class="w-95 btn btn-lg btn-primary btn-logout"">Logout</button> -->
+        </a>
+        <div id="gridTable"></div>
+    <?php 
+        include "../assets/html/footer.html";
+    ?>
+    <script type="text/javascript" src="../assets/js/index.js"></script>
 </body>
 </html>
 
