@@ -45,3 +45,10 @@ function getNextIdentifier(array $employeesCollection): int
 {
 // TODO implement it
 }
+
+function getAllEmployees($filter): array
+{   
+    print_r ($filter);
+    return $filter;
+
+}
