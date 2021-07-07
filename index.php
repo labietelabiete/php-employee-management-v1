@@ -55,7 +55,7 @@ if (isset($_GET["logout"])) {
           }
           ?>
           <div class="col col-12 pt-4">
-            <button class="w-95 btn btn-lg btn-primary btn-login" type="submit">SignIn</button>
+            <button class="w-95 btn btn-lg btn-primary btn-login" type="submit">Sign In</button>
           </div>
 
         </form>
